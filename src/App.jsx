@@ -12,12 +12,12 @@ const App = () => {
   return (
     <Fragment>
       <Helmet
-        titleTemplate={'%s | A Blue Lemon Productions'}
-        defaultTitle='A Blue Lemon Productions'>
-        <link rel='canonical' href='https://abluelemon.com' />
+        titleTemplate={'%s | Jordi Arjó, psicólogo y terapeuta'}
+        defaultTitle='Jordi Arjó Francés'>
+        <link rel='canonical' href='http://servicio-terapeutico.online/' />
         <meta
           name='description'
-          content='We achieve a positive economic and social impact of our events generated for the surrounding areas, while also providing visibility for the surrounding businesses.'
+          content='Jordi Arjó psicólogo y terapeuta. Servicio de terapias individuales y para grupos online. Terapias presenciales.'
         />
       </Helmet>
       <Header />

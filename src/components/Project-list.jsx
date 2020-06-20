@@ -17,7 +17,7 @@ const Container = styled.div`
   align-items: center;
   padding: 4% 10% 3rem;
   box-sizing: border-box;
-  background: #262938;
+  background: var(--main-bg-color);
   z-index: 1;
   min-height: ${props => props.position + 'px'};
 

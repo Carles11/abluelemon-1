@@ -4,13 +4,13 @@ import styled, { css } from 'styled-components';
 import { useScrollPosition, useWindowSize } from './Hooks';
 
 const Container = styled.article.attrs({
-  style: props => ({
+  style: (props) => ({
     transitionDelay: 200 * props.order + 'ms',
   }),
 })`
   width: 100%;
   position: relative;
-  background: #2a2e3e;
+  background: var(--secondary-bg-color);
   padding: 6rem 1.5rem 1.5rem;
   margin-top: 25px;
   margin-bottom: 1rem;
@@ -42,7 +42,7 @@ const Container = styled.article.attrs({
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.render &&
     css`
       opacity: 1;
@@ -67,36 +67,33 @@ const Title = styled.h3`
 `;
 
 const Subtitle = styled.h4`
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   text-align: center;
   font-size: 0.9rem;
   margin-top: 0;
   padding-bottom: 1.5rem;
-  border-bottom: 1px dotted #15b6cd;
+  border-bottom: 1px dotted var(--secondary-bg-color);
 `;
 
 const Text = styled.p`
   line-height: 1.5;
 `;
 
-const Box = props => {
+const Box = (props) => {
   const [render, setRender] = useState(false);
   const { h: height } = useWindowSize();
   const scroll = useScrollPosition();
   const { name, description, img, mail, role, order } = props;
 
-  useEffect(
-    () => {
-      if (scroll > height / 1.5) {
-        setRender(true);
-      }
+  useEffect(() => {
+    if (scroll > height / 1.5) {
+      setRender(true);
+    }
 
-      if (scroll < height / 1.5) {
-        setRender(false);
-      }
-    },
-    [scroll],
-  );
+    if (scroll < height / 1.5) {
+      setRender(false);
+    }
+  }, [scroll]);
 
   return (
     <Container render={render} order={order}>

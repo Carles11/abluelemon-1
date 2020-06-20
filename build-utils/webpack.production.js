@@ -9,7 +9,7 @@ const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
-module.exports = dirname => ({
+module.exports = (dirname) => ({
   output: {
     filename: '[hash].bundle.js',
     chunkFilename: '[id].[chunkhash].lazy.js',
@@ -29,12 +29,13 @@ module.exports = dirname => ({
       chunkFilename: '[id].css',
     }),
     new WebpackPwaManifest({
-      name: 'ABlueLemon',
-      short_name: 'ABlueLemon',
-      description: 'A Blue Lemon Production Web App',
-      background_color: '#262938',
+      name: 'Jordi Arjó, psicólogo y terapeuta',
+      short_name: 'Jordi Arjó Francés',
+      description:
+        'Terapias en grupos e individuales. Terapias oncológicas y tanatológicas.',
+      background_color: '#006c80',
       crossorigin: 'use-credentials',
-      theme_color: '#262938',
+      theme_color: '#006c80',
       inject: true,
       icons: [
         {
@@ -48,10 +49,13 @@ module.exports = dirname => ({
       plugins: [imageminMozjpeg({ quality: '75' })],
     }),
     new RobotstxtPlugin({
-      sitemap: 'https://abluelemon.com/sitemap.xml',
-      host: 'https://abluelemon.com',
+      sitemap: 'http://servicio-terapeutico.online//sitemap.xml',
+      host: 'http://servicio-terapeutico.online/',
     }),
-    new SitemapPlugin('https://abluelemon.com', ['/projects', '/contact']),
+    new SitemapPlugin('http://servicio-terapeutico.online/', [
+      '/projects',
+      '/contact',
+    ]),
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast
       // and not allow any straggling "old" SWs to hang around

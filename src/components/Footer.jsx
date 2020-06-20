@@ -17,7 +17,7 @@ const Container = styled.footer`
   display: flex;
   padding: 3rem 10%;
   box-sizing: border-box;
-  background: #2a2e3e;
+  background: var(--secondary-bg-color);
   transition: top 0.5s ease-out;
   z-index: 1;
   border-top: 1px dotted #1b1c23;
@@ -48,7 +48,7 @@ const Copy = styled.div`
 
     & .high {
       background: transparent;
-      color: #15b6cd;
+      color: var(--secondary-bg-color);
     }
   }
 
@@ -76,7 +76,7 @@ const linkNav = css`
   margin-bottom: 0.5rem;
 
   &:hover {
-    color: #15b6cd;
+    color: var(--secondary-bg-color);
   }
 `;
 
@@ -127,7 +127,7 @@ const Footer = () => {
       <Section>
         <Nav>
           <Title>{LOCALES.NAVIGATION}</Title>
-          {nav_data.map(n => (
+          {nav_data.map((n) => (
             <LinkNav key={n.label} to={n.url}>
               {n.label}
             </LinkNav>

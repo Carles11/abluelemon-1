@@ -15,11 +15,11 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: ${props => props.position + 'px'};
-  min-height: ${props => props.position + 'px'};
+  margin-top: ${(props) => props.position + 'px'};
+  min-height: ${(props) => props.position + 'px'};
   padding: 3% 10% 1rem;
   box-sizing: border-box;
-  background: #262938;
+  background: var(--main-bg-color);
   z-index: 1;
   opacity: 0.99;
 
@@ -61,15 +61,18 @@ const AboutSection = () => {
   function fetchData() {
     const promise = API.get('users');
     promise
-      .then(res => {
+      .then((res) => {
         if (res.success) {
-          const sliced = res.data.splice(res.data.findIndex(user => user.name === 'Hassan Mokdad'), 1)
+          const sliced = res.data.splice(
+            res.data.findIndex((user) => user.name === 'Hassan Mokdad'),
+            1,
+          );
           setData(res.data);
         } else {
           setData([]);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         setData([]);
         console.log(err);
       });
@@ -79,18 +82,15 @@ const AboutSection = () => {
     fetchData();
   }, []);
 
-  useEffect(
-    () => {
-      if (scroll > height / 4) {
-        setRender(true);
-      }
+  useEffect(() => {
+    if (scroll > height / 4) {
+      setRender(true);
+    }
 
-      if (scroll < height / 4) {
-        setRender(false);
-      }
-    },
-    [scroll],
-  );
+    if (scroll < height / 4) {
+      setRender(false);
+    }
+  }, [scroll]);
 
   if (data && !data.length) return <Loader />;
 

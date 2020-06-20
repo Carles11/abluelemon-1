@@ -10,11 +10,11 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: ${props => props.position + 'px'};
-  min-height: ${props => props.position + 'px'};
+  margin-top: ${(props) => props.position + 'px'};
+  min-height: ${(props) => props.position + 'px'};
   padding: 3% 15% 1rem;
   box-sizing: border-box;
-  background: #262938;
+  background: var(--main-bg-color);
   z-index: 1;
   opacity: 0.99;
 
@@ -29,7 +29,7 @@ const Container = styled.section`
 `;
 
 const Title = styled.h4`
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   margin-bottom: 0;
   line-height: 1;
 `;
@@ -43,7 +43,7 @@ const Paragraph = styled.p`
   line-height: 1.6;
 `;
 
-const ProjectBody = props => {
+const ProjectBody = (props) => {
   const { title, description } = props;
   const { h: height } = useWindowSize();
 

@@ -13,7 +13,7 @@ const itemStyles = css`
   transition: color 0.5s;
 
   &:hover {
-    color: #15b6cd;
+    color: var(--secondary-bg-color);
     text-decoration: none;
   }
 
@@ -36,13 +36,13 @@ const ItemStyles = styled(NavLink)`
   ${itemStyles}
 `;
 
-const NavigationItem = props => (
+const NavigationItem = (props) => (
   <ItemStyles
     onClick={props.handleClick}
     key={props.label}
     exact
     to={props.url}
-    activeStyle={{ color: '#15b6cd' }}>
+    activeStyle={{ color: 'var(--secondary-bg-color)' }}>
     {props.label}
   </ItemStyles>
 );

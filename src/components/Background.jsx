@@ -6,8 +6,10 @@ import { IconArrow } from './Icons';
 import { useScrollPosition } from './Hooks';
 import Title from './Title';
 
+import '../css/Background.css';
+
 const iconStyling = css`
-  position: absolute;
+  position: relative;
   top: -5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -42,9 +44,11 @@ const Background = (props) => {
 
   return (
     <div>
+      <Title />
       <div id='fullwidth-video'>
         <div className='fullwidth-video-bg'>
           <video
+            className='video'
             playsInline
             autoPlay
             muted
@@ -65,6 +69,7 @@ const Background = (props) => {
           </video>
         </div>
       </div>
+      <Icon />
     </div>
   );
 };
