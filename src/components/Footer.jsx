@@ -6,9 +6,9 @@ import logo from '../assets/image/logo_tiny.png';
 import { LocalesContext } from './Context';
 
 const nav_data = [
-  { url: '/', label: 'HOME' },
-  { url: '/projects', label: 'PROJECTS' },
-  { url: '/contact', label: 'CONTACT' },
+  { url: '/', label: 'INICIO' },
+  { url: '/projects', label: 'TERAPIAS' },
+  { url: '/contact', label: 'CONTACTO' },
 ];
 
 const Container = styled.footer`

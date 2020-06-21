@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { IconArrow } from './Icons';
 import { useScrollPosition } from './Hooks';
 import Title from './Title';
-
+import Arrow from './arrow/Arrow';
 import '../css/Background.css';
 
 const iconStyling = css`
@@ -69,7 +69,7 @@ const Background = (props) => {
           </video>
         </div>
       </div>
-      <Icon />
+      <Arrow />
     </div>
   );
 };

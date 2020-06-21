@@ -5,9 +5,9 @@ import { IconMenu } from './Icons';
 import NavigationItem from './Navigation-item';
 
 const nav_data = [
-  { url: '/', label: 'HOME' },
-  { url: '/projects', label: 'PROJECTS' },
-  { url: '/contact', label: 'CONTACT' },
+  { url: '/', label: 'INICIO' },
+  { url: '/projects', label: 'TERAPIAS' },
+  { url: '/contact', label: 'CONTACTO' },
 ];
 
 const Nav = styled.nav`
