@@ -63,7 +63,7 @@ const AboutSection = () => {
     promise
       .then(res => {
         if (res.success) {
-          const sliced = res.data.splice(res.data.findIndex(user => user.name === 'Hassan Mokdad'), 1)
+          // const sliced = res.data.splice(res.data.findIndex(user => user.name === 'Hassan Mokdad'), 1)
           setData(res.data);
         } else {
           setData([]);
