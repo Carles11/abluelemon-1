@@ -4,7 +4,7 @@ import Loadable from 'react-loadable';
 import { Redirect } from 'react-router-dom';
 
 import Loader from '../components/Loader';
-import Background from '../components/Background';
+import BackgroundImg from '../components/BackgroundImg';
 import { getLastStr } from '../utils/helpers';
 import config from '../config';
 
@@ -44,6 +44,7 @@ const Project = props => {
   useEffect(() => {
     if (Object.keys(data).length === 0) {
       const id = getLastStr(pathname, '-');
+      console.log("ID", id)
       fetchData(id);
     }
   }, []);
@@ -71,7 +72,7 @@ const Project = props => {
           { property: 'og:title', content: data.title },
         ]}
       />
-      <Background image={images} text={data.title} />
+      <BackgroundImg image={images} text={data.title} />
       {!!lazy && <ProjectBody {...data} />}
       {!!lazy && <Footer />}
     </section>
