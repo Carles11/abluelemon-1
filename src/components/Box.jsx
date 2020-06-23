@@ -8,7 +8,7 @@ const Container = styled.article.attrs({
     transitionDelay: 200 * props.order + 'ms',
   }),
 })`
-  width: 100%;
+  width: 80%;
   position: relative;
   background: var(--secondary-bg-color);
   padding: 6rem 1.5rem 1.5rem;

@@ -15,7 +15,7 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: ${(props) => props.position + 'px'};
+  margin-top: 100vh;
   min-height: ${(props) => props.position + 'px'};
   padding: 3% 10% 1rem;
   box-sizing: border-box;
@@ -42,7 +42,7 @@ const Boxes = styled.div`
 
   @media only screen and (min-width: 768px) and (max-width: 1224px) {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   @media only screen and (max-width: 768px) {
@@ -63,10 +63,7 @@ const AboutSection = () => {
     promise
       .then((res) => {
         if (res.success) {
-          const sliced = res.data.splice(
-            res.data.findIndex((user) => user.name === 'Hassan Mokdad'),
-            1,
-          );
+          // const sliced = res.data.splice(res.data.findIndex(user => user.name === 'Hassan Mokdad'), 1)
           setData(res.data);
         } else {
           setData([]);

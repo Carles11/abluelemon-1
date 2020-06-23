@@ -9,10 +9,11 @@ import Arrow from './arrow/Arrow';
 import '../css/Background.css';
 
 const iconStyling = css`
-  position: relative;
-  top: -5rem;
+  position: absolute;
+  top: 0rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2000;
 `;
 
 const Icon = styled(IconArrow)`
@@ -20,7 +21,7 @@ const Icon = styled(IconArrow)`
 `;
 
 const Background = (props) => {
-  const { video, text } = props;
+  const { video } = props;
   const [render, setRender] = useState(false);
   const [background, setBackground] = useState(
     Array.isArray(video) ? video[0].playVideo() : video,
@@ -45,6 +46,7 @@ const Background = (props) => {
   return (
     <div>
       <Title />
+
       <div id='fullwidth-video'>
         <div className='fullwidth-video-bg'>
           <video
@@ -69,14 +71,14 @@ const Background = (props) => {
           </video>
         </div>
       </div>
-      <Arrow />
+      <Icon {...props} />
     </div>
   );
 };
 
 Background.propTypes = {
   text: PropTypes.string,
-  image: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  video: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 export default Background;

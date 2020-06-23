@@ -30,7 +30,7 @@ const Projects = () => {
   return (
     <Fragment>
       <Helmet
-        title='Projects'
+        title='Terapias'
         meta={[{ name: 'description', content: 'Projects' }]}
       />
       {!!lazy && <ProjectList />}
