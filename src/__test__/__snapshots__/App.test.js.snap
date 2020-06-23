@@ -19,17 +19,17 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <HelmetWrapper
-          defaultTitle="A BLUE LEMON PRODUCTIONS"
+          defaultTitle="JORDI ARJÓ FRANCÉS, TERAPIAS ONLINE"
           defer={true}
           encodeSpecialCharacters={true}
-          titleTemplate="%s | A BLUE LEMON"
+          titleTemplate="%s | JORDI ARJÓ"
         >
           <link
-            href="https://abluelemon.com"
+            href="https://servicio-terapeutico.online/"
             rel="canonical"
           />
           <meta
-            content="A Blue Lemon productions, Musical productions"
+            content="Jordi Arjó Francés, psicólogo y terapeuta"
             name="description"
           />
         </HelmetWrapper>,
@@ -46,18 +46,18 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <link
-              href="https://abluelemon.com"
+              href="https://servicio-terapeutico.online/"
               rel="canonical"
             />,
             <meta
-              content="A Blue Lemon productions, Musical productions"
+              content="Jordi Arjó Francés, psicólogo y terapeuta"
               name="description"
             />,
           ],
-          "defaultTitle": "A BLUE LEMON PRODUCTIONS",
+          "defaultTitle": "JORDI ARJÓ FRANCÉS, TERAPIAS ONLINE",
           "defer": true,
           "encodeSpecialCharacters": true,
-          "titleTemplate": "%s | A BLUE LEMON",
+          "titleTemplate": "%s | JORDI ARJÓ FRANCÉS",
         },
         "ref": null,
         "rendered": Array [
@@ -66,7 +66,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "href": "https://abluelemon.com",
+              "href": "https://servicio-terapeutico.online/",
               "rel": "canonical",
             },
             "ref": null,
@@ -78,7 +78,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "content": "A Blue Lemon productions, Musical productions",
+              "content": "Jordi Arjó Francés, psicólogo y terapeuta",
               "name": "description",
             },
             "ref": null,
@@ -117,17 +117,17 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <HelmetWrapper
-            defaultTitle="A BLUE LEMON PRODUCTIONS"
+            defaultTitle="JORDI ARJÓ FRANCÉS, TERAPIAS ONLINE"
             defer={true}
             encodeSpecialCharacters={true}
-            titleTemplate="%s | A BLUE LEMON"
+            titleTemplate="%s | JORDI ARJÓ FRANCÉS"
           >
             <link
-              href="https://abluelemon.com"
+              href="http://servicio-terapeutico.online/"
               rel="canonical"
             />
             <meta
-              content="A Blue Lemon productions, Musical productions"
+              content="Jordi Arjó Francés, psicólogo y terapeuta"
               name="description"
             />
           </HelmetWrapper>,
@@ -144,18 +144,18 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <link
-                href="https://abluelemon.com"
+                href="http://servicio-terapeutico.online/"
                 rel="canonical"
               />,
               <meta
-                content="A Blue Lemon productions, Musical productions"
+                content="Jordi Arjó Francés, psicólogo y terapeuta"
                 name="description"
               />,
             ],
-            "defaultTitle": "A BLUE LEMON PRODUCTIONS",
+            "defaultTitle": "JORDI ARJÓ FRANCÉS, TERAPIAS ONLINE",
             "defer": true,
             "encodeSpecialCharacters": true,
-            "titleTemplate": "%s | A BLUE LEMON",
+            "titleTemplate": "%s | JORDI ARJÓ FRANCÉS",
           },
           "ref": null,
           "rendered": Array [
@@ -164,7 +164,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "href": "https://abluelemon.com",
+                "href": "http://servicio-terapeutico.online/",
                 "rel": "canonical",
               },
               "ref": null,
@@ -176,7 +176,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "content": "A Blue Lemon productions, Musical productions",
+                "content": "Jordi Arjó Francés, psicólogo y terapeuta",
                 "name": "description",
               },
               "ref": null,

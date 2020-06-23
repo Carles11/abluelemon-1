@@ -103,8 +103,9 @@ const Title = (props) => {
         <TitleItem animate={animate} initial={initial}>
           {/* <TitleSpan>{LOCALES.APP_NAME}</TitleSpan> */}
 
+          <hr />
           <Logo src={logo} alt={LOCALES.APP_NAME} />
-
+          <hr />
           <Subtitle>{LOCALES.MAIN_TITLE}</Subtitle>
         </TitleItem>
       )}

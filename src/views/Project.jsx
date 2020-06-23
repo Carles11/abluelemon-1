@@ -21,7 +21,7 @@ const ProjectBody = Loadable({
   loading: Loader,
 });
 
-const Project = props => {
+const Project = (props) => {
   const [data, setData] = useState({});
   const [images, setImages] = useState(null);
   const [lazy, setLazy] = useState(false);
@@ -29,7 +29,7 @@ const Project = props => {
   const { pathname } = props.location;
 
   function fetchData(id) {
-    API.get(`projects/${id}`).then(res => {
+    API.get(`projects/${id}`).then((res) => {
       if (res.success) {
         let [a, ...images] = res.data.images;
         setImages(images);
@@ -48,14 +48,11 @@ const Project = props => {
     }
   }, []);
 
-  useEffect(
-    () => {
-      Footer.preload();
-      ProjectBody.preload();
-      setLazy(true);
-    },
-    [lazy],
-  );
+  useEffect(() => {
+    Footer.preload();
+    ProjectBody.preload();
+    setLazy(true);
+  }, [lazy]);
 
   if (Object.keys(data).length === 0 && !redirect)
     return <Loader msg={'Loading project'} />;

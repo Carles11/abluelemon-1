@@ -1,10 +1,10 @@
 {
-  "name": "abluelemon",
+  "name": "servicio-terapias",
   "version": "1.0.8",
-  "description": "A blue lemon productions web app",
+  "description": "Jordi Arjó Francés, psicólogo y terapeuta",
   "main": "./src/index.js",
-  "repository": "https://github.com/txiverke/abluelemon.git",
-  "author": "Xavier Vila <xavi.vila.albiol@gmail.com>",
+  "repository": "https://github.com/Carles11/jordi-web-terapias.git",
+  "author": "Carles del Río Francés <carles@crix.design>",
   "license": "MIT",
   "scripts": {
     "start": "yarn dev:build",
