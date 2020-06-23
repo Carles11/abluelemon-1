@@ -45,6 +45,7 @@ h2 {
 
 h2.tit-box {
   font-size: calc(30px + (35 - 25) * ((100vw - 600px) / (1600 - 900)));
+  color: var(--main-bg-color)
 }
 
 h3 {

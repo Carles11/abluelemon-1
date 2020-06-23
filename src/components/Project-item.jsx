@@ -176,7 +176,7 @@ const ProjectItem = (props) => {
     <Container render={render} order={order}>
       <Figure to={`/projects/${slug}`}>
         <Image className='lazyload' data-src={images[0]} alt={title} />
-        <Label>View Project</Label>
+        <Label>Abrir ficha</Label>
       </Figure>
       <Title className='tit-box'>{title}</Title>
       <Text>{truncateStr(description[0])}</Text>

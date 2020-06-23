@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import logo from '../assets/image/logo_tiny.png';
+import logo from '../assets/image/logo-tiny-jordi.png';
 import { LocalesContext } from './Context';
 
 const nav_data = [
@@ -53,7 +53,7 @@ const Copy = styled.div`
   }
 
   & .fig {
-    margin: 0.7rem 0 0;
+    margin: 0;
     padding: 0;
     width: 50px;
   }
@@ -116,7 +116,7 @@ const Footer = () => {
             data-src={logo}
             alt='A blue lemon logo'
             className='lazyload'
-            width='90%'
+            width='100%'
           />
         </figure>
         <p className='txt'>

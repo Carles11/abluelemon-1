@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import Navigation from './Navigation';
-import logo from '../assets/image/logos/JordiLogo_W_200.png';
+import logo from '../assets/image/logos/logo-short.png';
 import { useScrollPosition } from './Hooks';
 import { LocalesContext } from './Context';
 
@@ -32,8 +32,12 @@ const LogoLink = styled(Link)`
 
 const Logo = styled.img`
   margin-left: 2rem;
-  width: 200px;
+  width: 100px;
   height: auto;
+  @media only screen and (max-width: 768px) {
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
 `;
 
 const Background = styled.div`

@@ -71,6 +71,9 @@ const TextBlock = styled.p`
 const Logo = styled.img`
   margin: auto;
   height: auto;
+  @media only screen and (max-width: 768px) {
+    height: 120px;
+  }
 `;
 
 const Title = (props) => {
