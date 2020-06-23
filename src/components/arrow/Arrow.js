@@ -4,8 +4,10 @@ import './Arrow.css';
 
 const Arrow = () => {
   return (
-    <div class='arrow bounce'>
-      <a class='fa fa-arrow-down fa-2x' href='#'></a>
+    <div class='arrow'>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   );
 };

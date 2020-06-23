@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { IconArrow } from './Icons';
+import Arrow from './arrow/Arrow';
 import { useScrollPosition } from './Hooks';
 import Title from '../components/Title';
 
@@ -17,7 +17,7 @@ const Figure = styled.figure`
 `;
 
 const Image = styled.div.attrs({
-  style: props => ({
+  style: (props) => ({
     top: 2 * -props.position + 'px',
   }),
 })`
@@ -32,25 +32,14 @@ const Image = styled.div.attrs({
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 
-  ${props =>
+  ${(props) =>
     props.render &&
     css`
       opacity: 1;
     `}
 `;
 
-const iconStyling = css`
-  position: absolute;
-  top: -5rem;
-  left: 50%;
-  transform: translateX(-50%);
-`;
-
-const Icon = styled(IconArrow)`
-  ${iconStyling}
-`;
-
-const BackgroundImg = props => {
+const BackgroundImg = (props) => {
   const { image, text } = props;
   const [render, setRender] = useState(false);
   const [background, setBackground] = useState(
@@ -60,12 +49,9 @@ const BackgroundImg = props => {
   const position = Math.floor(scroll / 10);
   let index = 0;
 
-  useEffect(
-    () => {
-      setRender(true);
-    },
-    [render],
-  );
+  useEffect(() => {
+    setRender(true);
+  }, [render]);
 
   function renderBackground() {
     index = index < image.length - 1 ? index + 1 : 0;
@@ -78,7 +64,7 @@ const BackgroundImg = props => {
         renderBackground();
       }, 10000);
     }
-    return () => clearInterval(interval)
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -91,7 +77,7 @@ const BackgroundImg = props => {
           style={{ backgroundImage: `url(${background})` }}
         />
       </Figure>
-      <Icon {...props} />
+      <Arrow />
     </Fragment>
   );
 };

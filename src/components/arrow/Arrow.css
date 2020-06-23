@@ -1,41 +1,47 @@
-/* @bg: #2d2d37; // Dark blue
-@primary: #fd6b21; // Orange */
-
 body {
-  background: @bg;
-}
-
-a {
-  color: white;
-  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .arrow {
-  text-align: center;
-  margin: 8% 0;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+.arrow span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
 }
 
-@keyframes bounce {
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
 
-  0%,
-  20%,
-  50%,
-  80%,
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
   100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-30px);
-  }
-
-  60% {
-    transform: translateY(-15px);
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
   }
 }
