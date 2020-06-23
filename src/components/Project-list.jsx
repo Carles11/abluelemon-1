@@ -75,7 +75,7 @@ const ProjectList = props => {
     [data],
   );
 
-  if (data.lenght === 0) return <Loader msg={'Loading projects.'} />;
+  if (data.lenght === 0) return <Loader msg={'Cargando terapias...'} />;
 
   return (
     <Container position={height}>
