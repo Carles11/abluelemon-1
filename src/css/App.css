@@ -53,10 +53,11 @@ h3 {
 }
 
 a {
-  color: #15b6cd;
+  color: var(--main-bg-color);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--white-bg-color);
 }

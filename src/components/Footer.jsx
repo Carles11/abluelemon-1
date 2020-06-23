@@ -48,7 +48,7 @@ const Copy = styled.div`
 
     & .high {
       background: transparent;
-      color: var(--primary-bg-color);
+      color: var(--main-bg-color);
     }
   }
 
@@ -121,7 +121,7 @@ const Footer = () => {
         </figure>
         <p className='txt'>
           Copyright &copy;
-          <mark className='high'>{LOCALES.CONTACTS[0].CONTACT}</mark>, {date}.
+          <mark className='high'> {LOCALES.CONTACTS[0].CONTACT} </mark>, {date}.
         </p>
       </Copy>
       <Section>

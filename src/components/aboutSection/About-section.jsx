@@ -1,55 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
-import styled from 'styled-components';
 
-import TitleSection from './Title-section';
-import Loader from './Loader';
-import Box from './Box';
-import { useWindowSize, useScrollPosition } from './Hooks';
-import { LocalesContext } from './Context';
-import * as API from '../utils/API';
+import TitleSection from '../Title-section';
+import Loader from '../Loader';
+import Box from '../Box';
+import { useWindowSize, useScrollPosition } from '../Hooks';
+import { LocalesContext } from '../Context';
+import * as API from '../../utils/API';
 
-const Container = styled.section`
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100vh;
-  min-height: ${(props) => props.position + 'px'};
-  padding: 3% 10% 1rem;
-  box-sizing: border-box;
-  background: var(--main-bg-color);
-  z-index: 1;
-  opacity: 0.99;
-
-  @media only screen and (min-width: 768px) and (max-width: 1224px) {
-    padding: 5%;
-  }
-
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    padding: 1.5rem;
-  }
-`;
-
-const Boxes = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4rem 0 5rem;
-
-  @media only screen and (min-width: 768px) and (max-width: 1224px) {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
-`;
+import './About-section.css';
 
 const AboutSection = () => {
   const [data, setData] = useState([]);
@@ -92,21 +50,21 @@ const AboutSection = () => {
   if (data && !data.length) return <Loader />;
 
   return (
-    <Container id='aboutContent' position={height}>
+    <div className='container' id='aboutContent' position={height}>
       <TitleSection
         title={LOCALES.ABOUT_TITLE}
         text={LOCALES.ABOUT_TEXT}
         show={render}
       />
 
-      <Boxes>
+      <div className='boxes'>
         {data
           .sort((a, b) => (a._id > b._id ? -1 : 1))
           .map((a, i) => (
             <Box order={i + 1} key={a._id} {...a} />
           ))}
-      </Boxes>
-    </Container>
+      </div>
+    </div>
   );
 };
 
