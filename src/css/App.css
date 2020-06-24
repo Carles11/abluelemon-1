@@ -1,10 +1,25 @@
+:root {
+  /* --main-bg-color: #c8ddee;
+  --secondary-bg-color: #7a8b99; */
+
+
+  --main-bg-color: #443235;
+  --secondary-bg-color: #8f7d7f;
+  --main-font: "Montserrat", sans-serif;
+  /* 
+   --main-bg-color: #c8ddee;
+   --secondary-bg-color: #7a8b99;
+   */
+}
+
 body {
   position: relative;
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--main-font),
+    sans-serif;
   font-size: calc(16px + (18 - 14) * ((100vw - 300px) / (1600 - 100)));
   font-weight: 100;
   color: #ffffff;
-  background: #262938;
+  background: var(--main-bg-color);
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -14,7 +29,8 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Volkhov', serif;
+  font-family: '--main-font',
+    sans-serif;
   line-height: 1.2;
   font-weight: 100;
 }
@@ -29,6 +45,7 @@ h2 {
 
 h2.tit-box {
   font-size: calc(30px + (35 - 25) * ((100vw - 600px) / (1600 - 900)));
+  color: var(--main-bg-color)
 }
 
 h3 {
@@ -36,10 +53,11 @@ h3 {
 }
 
 a {
-  color: #15b6cd;
+  color: var(--main-bg-color);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--white-bg-color);
 }

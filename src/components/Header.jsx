@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import Navigation from './Navigation';
-import logo from '../assets/image/logo_tiny.png';
+import logo from '../assets/image/logos/logo-short.png';
 import { useScrollPosition } from './Hooks';
 import { LocalesContext } from './Context';
 
@@ -32,15 +32,19 @@ const LogoLink = styled(Link)`
 
 const Logo = styled.img`
   margin-left: 2rem;
-  width: 70px;
+  width: 100px;
   height: auto;
+  @media only screen and (max-width: 768px) {
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
 `;
 
 const Background = styled.div`
   position: absolute;
   top: -73px;
   left: 0;
-  background: #262938;
+  background: var(--main-bg-color);
   width: 100%;
   height: 73px;
   z-index: 999;
@@ -48,7 +52,7 @@ const Background = styled.div`
   transition: top 600ms cubic-bezier(0.19, 1, 0.22, 1),
     opacity 600ms cubic-bezier(0.19, 1, 0.22, 1);
 
-  ${props =>
+  ${(props) =>
     props.animate &&
     css`
       top: 0;
@@ -61,17 +65,14 @@ const Header = () => {
   const LOCALES = useContext(LocalesContext);
   const scroll = useScrollPosition();
 
-  useEffect(
-    () => {
-      if (scroll > 50) {
-        setAnimate(true);
-      }
-      if (scroll < 50) {
-        setAnimate(false);
-      }
-    },
-    [scroll],
-  );
+  useEffect(() => {
+    if (scroll > 50) {
+      setAnimate(true);
+    }
+    if (scroll < 50) {
+      setAnimate(false);
+    }
+  }, [scroll]);
 
   return (
     <Container id='header'>

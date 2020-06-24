@@ -5,9 +5,9 @@ import { IconMenu } from './Icons';
 import NavigationItem from './Navigation-item';
 
 const nav_data = [
-  { url: '/', label: 'HOME' },
-  { url: '/projects', label: 'PROJECTS' },
-  { url: '/contact', label: 'CONTACT' },
+  { url: '/', label: 'INICIO' },
+  { url: '/projects', label: 'TERAPIAS' },
+  { url: '/contact', label: 'CONTACTO' },
 ];
 
 const Nav = styled.nav`
@@ -23,7 +23,7 @@ const Icon = styled(IconMenu)`
   z-index: 1001;
 
   &:hover {
-    color: #15b6cd;
+    color: var(--secondary-bg-color);
   }
 
   @media only screen and (max-width: 649px) {
@@ -41,20 +41,20 @@ const ListMenu = styled.div`
     top: 0;
     left: -100%;
     flex-direction: column;
-    background: #262938;
+    background: var(--main-bg-color);
     width: 100%;
     height: 100vh;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 
-    ${props =>
+    ${(props) =>
       props.show &&
       css`
         left: 0;
         opacity: 0.98;
       `}
 
-    ${props =>
+    ${(props) =>
       !props.show &&
       css`
         left: -100%;
@@ -63,7 +63,7 @@ const ListMenu = styled.div`
   }
 `;
 
-const Navigation = props => {
+const Navigation = (props) => {
   const [visible, setVisible] = useState(false);
 
   const handleVisibility = () => {
@@ -80,7 +80,7 @@ const Navigation = props => {
     <Nav>
       <Icon visible={visible} handleIconClick={handleVisibility} {...props} />
       <ListMenu show={visible}>
-        {nav_data.map(nav => (
+        {nav_data.map((nav) => (
           <NavigationItem
             handleClick={handleClick}
             key={nav.label}

@@ -9,7 +9,7 @@ import Background from '../components/Background';
 const AboutSection = Loadable({
   loader: () =>
     import(
-      /* webpackChunkName: 'about-section' */ '../components/About-section'
+      /* webpackChunkName: 'about-section' */ '../components/aboutSection/About-section'
     ),
   loading: Loader,
 });

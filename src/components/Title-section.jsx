@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const Title = styled.h2`
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   margin: 4.5rem 0 1rem;
   opacity: 0;
   z-index: 1;
   transition: opacity 1000ms cubic-bezier(0.19, 1, 0.22, 1),
     margin-top 800ms cubic-bezier(0.19, 1, 0.22, 1);
 
-  ${props =>
+  ${(props) =>
     props.render &&
     css`
       opacity: 1;
@@ -34,7 +34,7 @@ const Text = styled.h3`
     padding-bottom: 4rem;
   }
 
-  ${props =>
+  ${(props) =>
     props.render &&
     css`
       opacity: 1;
@@ -52,25 +52,22 @@ const Text = styled.h3`
   }
 `;
 
-const TitleSection = props => {
+const TitleSection = (props) => {
   const [render, setRender] = useState(false);
   const { title, text, show } = props;
 
   const renderText = typeof text === 'string' ? true : false;
 
-  useEffect(
-    () => {
-      setRender(show);
-    },
-    [show],
-  );
+  useEffect(() => {
+    setRender(show);
+  }, [show]);
 
   return (
     <Fragment>
       <Title render={render}>{title}</Title>
       {!!renderText && <Text render={render}>{text}</Text>}
       {!renderText &&
-        text.map(t => (
+        text.map((t) => (
           <Text key={t} render={render}>
             {t}
           </Text>

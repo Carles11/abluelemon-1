@@ -17,9 +17,9 @@ const Container = styled.section`
   align-items: center;
   padding: 4% 10% 3rem;
   box-sizing: border-box;
-  background: #262938;
+  background: var(--main-bg-color);
   z-index: 1;
-  min-height: ${props => props.position + 'px'};
+  min-height: ${(props) => props.position + 'px'};
   margin-top: -0.5rem;
 
   @media only screen and (max-width: 768px) {
@@ -51,7 +51,7 @@ const Image = styled.div`
   opacity: 0;
   transition: opacity 0.3s ease-in-out, top 0.5s ease-out;
 
-  ${props =>
+  ${(props) =>
     props.render &&
     css`
       opacity: 1;
@@ -99,7 +99,7 @@ const Contact = () => {
     <Fragment>
       <Helmet
         title='Contact'
-        meta={[{ name: 'description', content: 'Contact' }]}
+        meta={[{ name: 'descripción', content: 'contact' }]}
       />
       <Container position={height}>
         <Figure>
@@ -111,7 +111,7 @@ const Contact = () => {
           show={render}
         />
         <Body>
-          {LOCALES.CONTACTS.map(contact => (
+          {LOCALES.CONTACTS.map((contact) => (
             <Address key={contact.MAIL}>
               <Title>{contact.OFFICE}</Title>
               {contact.CONTACT}

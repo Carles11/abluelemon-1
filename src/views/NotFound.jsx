@@ -17,14 +17,14 @@ const Container = styled.section`
 `;
 
 const H1 = styled.h1`
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   font-size: 10rem;
   margin: 0;
   line-height: 1;
 `;
 
 const H2 = styled.h2`
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   margin: 0;
   text-align: center;
 `;
@@ -35,10 +35,10 @@ const P = styled.p`
 
 const linkBack = css`
   background: transparent;
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   padding: 0.5rem 1.5rem;
   margin-top: 1.5rem;
-  border: 1px solid #15b6cd;
+  border: 1px solid var(--secondary-bg-color);
   border-radius: 25px;
   transition: color 500ms ease-in-out, border-color 500ms ease-in-out;
 
@@ -53,7 +53,7 @@ const LinkBack = styled(Link)`
   ${linkBack}
 `;
 
-const NotFound = props => {
+const NotFound = (props) => {
   const LOCALES = useContext(LocalesContext);
 
   return (

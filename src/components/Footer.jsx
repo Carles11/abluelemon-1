@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import logo from '../assets/image/logo_tiny.png';
+import logo from '../assets/image/logo-tiny-jordi.png';
 import { LocalesContext } from './Context';
 
 const nav_data = [
-  { url: '/', label: 'HOME' },
-  { url: '/projects', label: 'PROJECTS' },
-  { url: '/contact', label: 'CONTACT' },
+  { url: '/', label: 'INICIO' },
+  { url: '/projects', label: 'TERAPIAS' },
+  { url: '/contact', label: 'CONTACTO' },
 ];
 
 const Container = styled.footer`
@@ -17,7 +17,7 @@ const Container = styled.footer`
   display: flex;
   padding: 3rem 10%;
   box-sizing: border-box;
-  background: #2a2e3e;
+  background: var(--secondary-bg-color);
   transition: top 0.5s ease-out;
   z-index: 1;
   border-top: 1px dotted #1b1c23;
@@ -48,12 +48,12 @@ const Copy = styled.div`
 
     & .high {
       background: transparent;
-      color: #15b6cd;
+      color: var(--main-bg-color);
     }
   }
 
   & .fig {
-    margin: 0.7rem 0 0;
+    margin: 0;
     padding: 0;
     width: 50px;
   }
@@ -76,7 +76,7 @@ const linkNav = css`
   margin-bottom: 0.5rem;
 
   &:hover {
-    color: #15b6cd;
+    color: var(--secondary-bg-color);
   }
 `;
 
@@ -116,18 +116,18 @@ const Footer = () => {
             data-src={logo}
             alt='A blue lemon logo'
             className='lazyload'
-            width='90%'
+            width='100%'
           />
         </figure>
         <p className='txt'>
-          Copyright &copy;<mark className='high'>{LOCALES.APP_NAME}</mark>,{' '}
-          {date}.
+          Copyright &copy;
+          <mark className='high'> {LOCALES.CONTACTS[0].CONTACT} </mark>, {date}.
         </p>
       </Copy>
       <Section>
         <Nav>
           <Title>{LOCALES.NAVIGATION}</Title>
-          {nav_data.map(n => (
+          {nav_data.map((n) => (
             <LinkNav key={n.label} to={n.url}>
               {n.label}
             </LinkNav>

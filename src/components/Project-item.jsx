@@ -7,14 +7,14 @@ import { getSlug, truncateStr } from '../utils/helpers';
 import location_icon from '../assets/image/location.png';
 
 const Container = styled.article.attrs({
-  style: props => ({
+  style: (props) => ({
     transitionDelay: 200 * props.order + 'ms',
   }),
 })`
   width: 32%;
   min-height: 600px;
   position: relative;
-  background: #2a2e3e;
+  background: var(--secondary-bg-color);
   padding: 1.5rem;
   margin-bottom: 2%;
   box-sizing: border-box;
@@ -54,7 +54,7 @@ const Container = styled.article.attrs({
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.render &&
     css`
       opacity: 1;
@@ -116,7 +116,7 @@ const Image = styled.img`
 
 const Title = styled.h2`
   position: relative;
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   margin-top: 300px;
   margin-bottom: 0.5rem;
 `;
@@ -157,29 +157,26 @@ const Time = styled.time`
   right: 0;
   font-size: 0.8rem;
   background: transparent;
-  color: #15b6cd;
+  color: var(--secondary-bg-color);
   border: 1px solid;
   padding: 0.25rem 0.5rem;
   border-radius: 25px;
 `;
 
-const ProjectItem = props => {
+const ProjectItem = (props) => {
   const [render, setRender] = useState(false);
   const { order, title, images, _id, location, year, description } = props;
   const slug = getSlug(`${title} ${_id}`);
 
-  useEffect(
-    () => {
-      setRender(true);
-    },
-    [render],
-  );
+  useEffect(() => {
+    setRender(true);
+  }, [render]);
 
   return (
     <Container render={render} order={order}>
       <Figure to={`/projects/${slug}`}>
         <Image className='lazyload' data-src={images[0]} alt={title} />
-        <Label>View Project</Label>
+        <Label>Abrir ficha</Label>
       </Figure>
       <Title className='tit-box'>{title}</Title>
       <Text>{truncateStr(description[0])}</Text>
