@@ -121,7 +121,12 @@ const Footer = () => {
         </figure>
         <p className='txt'>
           Copyright &copy;
-          <mark className='high'> {LOCALES.CONTACTS[0].CONTACT} </mark>, {date}.
+          <mark className='high'>
+            <a href={`mailto: ${LOCALES.COPYRIGHT[0].MAIL}`}>
+              {LOCALES.COPYRIGHT[0].MAIL}
+            </a>{' '}
+          </mark>
+          , {date}.
         </p>
       </Copy>
       <Section>

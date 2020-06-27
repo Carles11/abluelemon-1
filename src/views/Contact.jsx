@@ -6,7 +6,13 @@ import Footer from '../components/Footer';
 import TitleSection from '../components/Title-section';
 import { useWindowSize } from '../components/Hooks';
 import { LocalesContext } from '../components/Context';
-import map from '../assets/image/map.jpg';
+// import map from '../assets/image/map.jpg';
+import ContactForm from '../components/contactForm/ContactForm';
+// import Background from '../components/Background';
+import BackgroundImg from '../components/BackgroundImg';
+
+// import url from '../assets/video/Raindrops_Videvo.mp4';
+import images from '../assets/image/trees_lake.jpg';
 
 const Container = styled.section`
   position: relative;
@@ -103,13 +109,15 @@ const Contact = () => {
       />
       <Container position={height}>
         <Figure>
-          <Image render={render} style={{ backgroundImage: `url(${map})` }} />
+          {/* <Background forContact video={url} /> */}
+          <BackgroundImg forContact image={images} />
         </Figure>
         <TitleSection
           title={LOCALES.CONTACT_TITLE}
           text={LOCALES.CONTACT_DESCRIPTION}
           show={render}
         />
+        <ContactForm />
         <Body>
           {LOCALES.CONTACTS.map((contact) => (
             <Address key={contact.MAIL}>

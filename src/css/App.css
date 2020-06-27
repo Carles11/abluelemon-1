@@ -1,15 +1,19 @@
 :root {
-  /* --main-bg-color: #c8ddee;
-  --secondary-bg-color: #7a8b99; */
-
-
-  --main-bg-color: #443235;
-  --secondary-bg-color: #8f7d7f;
   --main-font: "Montserrat", sans-serif;
+
+
   /* 
-   --main-bg-color: #c8ddee;
-   --secondary-bg-color: #7a8b99;
-   */
+  --main-bg-color: #443235;
+  --secondary-bg-color: #8f7d7f; */
+  /* 
+  --main-bg-color: #c8ddee;
+  --secondary-bg-color: #7a8b99; */
+  /* 
+  --main-bg-color: #6D454C;
+  --secondary-bg-color: #C9ADA7; */
+  --main-bg-color: #033F63;
+  --secondary-bg-color: #B5B682;
+  --warning-bg-color: tomato;
 }
 
 body {

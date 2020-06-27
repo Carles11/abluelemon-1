@@ -40,7 +40,7 @@ const Image = styled.div.attrs({
 `;
 
 const BackgroundImg = (props) => {
-  const { image, text } = props;
+  const { image, text, forContact } = props;
   const [render, setRender] = useState(false);
   const [background, setBackground] = useState(
     Array.isArray(image) ? image[0] : image,
@@ -69,7 +69,7 @@ const BackgroundImg = (props) => {
 
   return (
     <Fragment>
-      <Title text={text} />
+      {!forContact && <Title text={text} />}
       <Figure>
         <Image
           render={render}
@@ -77,7 +77,7 @@ const BackgroundImg = (props) => {
           style={{ backgroundImage: `url(${background})` }}
         />
       </Figure>
-      <Arrow />
+      {!forContact && <Arrow />}
     </Fragment>
   );
 };

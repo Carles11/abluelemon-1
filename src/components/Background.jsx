@@ -7,7 +7,7 @@ import Arrow from './arrow/Arrow';
 import '../css/Background.css';
 
 const Background = (props) => {
-  const { video } = props;
+  const { video, forContact } = props;
   const [render, setRender] = useState(false);
   const [background, setBackground] = useState(
     Array.isArray(video) ? video[0].playVideo() : video,
@@ -31,7 +31,7 @@ const Background = (props) => {
 
   return (
     <Fragment>
-      <Title />
+      {!forContact && <Title />}
       <div id='fullwidth-video'>
         <video
           className='video'
@@ -54,7 +54,7 @@ const Background = (props) => {
           />
         </video>
       </div>
-      <Arrow />
+      {!forContact && <Arrow />}
     </Fragment>
   );
 };
