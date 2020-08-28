@@ -9,7 +9,6 @@ const ContactForm = () => {
     email: '',
     name: '',
     subject: '',
-    description: '',
   });
 
   const handleChange = (e) => {
@@ -32,9 +31,8 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let data = {
+    const data = {
       name: inputs.name,
-      subject: inputs.subject,
       email: inputs.email,
       message: inputs.message,
     };
@@ -51,48 +49,59 @@ const ContactForm = () => {
     setInputs({
       email: '',
       name: '',
-      subject: '',
-      description: '',
+      message: '',
     });
   };
 
   return (
     <div className='container_custom'>
       <form id='contact-form' onSubmit={handleSubmit} method='POST'>
-        <div className='group_custom'>
-          <span className='highlight'></span>
-          <span className='bar'></span>
-          <label htmlFor='name' className='custom_label'>
-            Nombre
-          </label>
-          <input autoComplete type='text' id='name' onChange={handleChange} />
-        </div>
-        <div className='group_custom'>
-          <span className='highlight'></span>
-          <span className='bar'></span>
-          <label htmlFor='exampleInputEmail1' className='custom_label'>
-            Correo electrónico
-          </label>
-          <input
-            autoComplete
-            type='email'
-            id='email'
-            aria-describedby='emailHelp'
-            onChange={handleChange}
-          />
-        </div>
-        <div className='group_custom'>
-          <span className='highlight'></span>
-          <span className='bar'></span>
-          <label htmlFor='message' className='custom_label'>
-            Mensaje
-          </label>
-          <textarea id='message' type='text' onChange={handleChange}></textarea>
-        </div>
+        <ol>
+          <li>
+            <input
+              autoComplete
+              type='text'
+              id='name'
+              name='name'
+              onChange={handleChange}
+              size='40'
+            />
+            <label htmlFor='name'>Nombre</label>
+          </li>
+          <li>
+            <input
+              autoComplete
+              type='email'
+              id='email'
+              name='email'
+              aria-describedby='emailHelp'
+              onChange={handleChange}
+              size='40'
+            />
+            <label htmlFor='email'>Correo electrónico</label>
+          </li>
+          <li>
+            <textarea
+              id='message'
+              name='message'
+              type='text'
+              onChange={handleChange}
+            />
+            <label id='mensaje' htmlFor='message'>
+              Mensaje
+            </label>
+          </li>
+          {/* <div className='switch'>
+            <input id='switch-1' type='checkbox' className='switch-input' />
+            <label htmlFor='switch-1' className='switch-label'>
+              LALALALALALALALALALLA
+            </label>
+          </div> */}
+        </ol>
 
-        <a href='#' className='button'>
-          Envía
-        </a>
+        <div className='submit'>
+          <input type='submit' value='envía' className='button' />
+        </div>
       </form>
     </div>
   );
