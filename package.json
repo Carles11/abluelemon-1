@@ -7,6 +7,7 @@
   "author": "Carles del Río Francés <carles@crix.design>",
   "license": "MIT",
   "scripts": {
+    "deploy-production": "react-scripts build && scp -r ./dist/* carles@164.90.219.155:/var/www/servicio-terapeutico.online/jordi-web-terapias",
     "start": "yarn dev:build",
     "dev:build": "yarn webpack-dev-server --env.mode development --hot",
     "prod:build": "rimraf dist && yarn webpack --env.mode production",
