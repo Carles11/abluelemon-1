@@ -7,7 +7,7 @@
   "author": "Carles del Río Francés <carles@crix.design>",
   "license": "MIT",
   "scripts": {
-    "deploy-production": "yarn prod:build && scp -r ./dist/* carles@164.90.219.155:/var/www/servicio-terapeutico.online/jordi-web-terapias",
+    "deploy-production": "yarn prod:build && sudo scp -r ./dist/* carles@164.90.219.155:/var/www/servicio-terapeutico.online/jordi-web-terapias",
     "start": "yarn dev:build",
     "dev:build": "yarn webpack-dev-server --env.mode development --hot",
     "prod:build": "rimraf dist && yarn webpack --env.mode production",
